@@ -150,7 +150,7 @@ manager();
 function generateCard(){
     for (i = 0; i < team.length; i++){
         let type = team[i].office || team[i].github || team[i].school; 
-        let card = `
+let card = `
 <div class="card">
   <h5 class="card-header">${team[i].name}</h5>
   <div class="card-body">
@@ -161,7 +161,8 @@ function generateCard(){
   </div>
 </div>
 ` 
-return card 
+let finalCards = "" + card;
+return finalCards; 
  }
 }
 
