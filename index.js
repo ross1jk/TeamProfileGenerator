@@ -1,6 +1,5 @@
 const inquirer = require("inquirer"); 
 const fs = require("fs"); 
-const { ENGINE_METHOD_RAND } = require("constants");
 
 let team = []; 
 
@@ -38,7 +37,6 @@ function manager(){
     }
     );
 };
-manager(); 
 
 function addTeamMember(){
     inquirer.prompt([
@@ -72,6 +70,7 @@ function addTeamMember(){
             });
         } if (data.add === "No"){
             console.log(team);
+            generateHTML();
         }
     }); 
 }; 
@@ -146,3 +145,22 @@ function addIntern(){
     );
 }; 
 
+manager(); 
+
+function generateHTML(){
+    for (i = 0; i < team.length; i++){
+        let type = team[i].office || team[i].github || team[i].school; 
+        let card = `
+<div class="card">
+  <h5 class="card-header">${team[i].name}</h5>
+  <div class="card-body">
+    <h5>${team[i].role}</h5>
+    <h6>${team[i].id}</h6>
+    <h6>${team[i].email}</h6>
+    <h6>${type}</h6>
+  </div>
+</div>
+` 
+console.log(card); 
+ }
+}
