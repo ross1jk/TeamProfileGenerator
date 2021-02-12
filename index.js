@@ -147,7 +147,7 @@ function addIntern(){
 
 manager(); 
 
-function generateHTML(){
+function generateCard(){
     for (i = 0; i < team.length; i++){
         let type = team[i].office || team[i].github || team[i].school; 
         let card = `
@@ -161,6 +161,22 @@ function generateHTML(){
   </div>
 </div>
 ` 
-console.log(card); 
+return card 
  }
+}
+
+function generateHTML(){
+    const html = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title>Team Profile</title>
+</head>
+<body> 
+    ${generateCard()}
+</body>
+</html>`
+
+console.log(html); 
 }
