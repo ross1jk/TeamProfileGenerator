@@ -26,15 +26,45 @@ function manager(){
             message: "Provide your office number"
         }
     ]).then(function (data){
+        const role = 'manager'
         const name = data.name;
         const id = data.id; 
         const email = data.email; 
         const office = data.office; 
-        let manager = {name, id, email, office}; 
+        let manager = {role, name, id, email, office}; 
         team.push(manager); 
-        console.log(team); 
+        console.log(team);
+        addTeamMember(); 
     }
-    )
-}
+    );
+};
 manager(); 
+
+function addTeamMember(){
+    inquirer.prompt([
+        {
+            type: "list", 
+            name: "add", 
+            message: "Would you like to add more team members?",
+            choices: [
+                "Yes",
+                "No"
+            ]
+        }
+    ]).then(function (data){
+        if (data.add === "Yes"){
+            inquirer.prompt([
+                {
+                    type: "list",
+                    name: "employeeType",
+                    message: "What is the team members role?",
+                    choices:[
+                        "Engineer",
+                        "Intern"
+                    ]
+                }
+            ])
+        }
+    })
+}
 
