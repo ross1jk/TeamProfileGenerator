@@ -1,48 +1,53 @@
 function generateCard(team) {
-    
-    for (i = 0; i < team.length; i++) {
-        if (team[i].role === "manager") {
-            return `
-            <div class="card">
-              <h5 class="card-header">${team[i].name}</h5>
-              <div class="card-body">
-                <h5>${team[i].role}</h5>
-                <h6>${team[i].id}</h6>
-                <h6>${team[i].email}</h6>
-                <h6>${team[i].office}</h6>
-              </div>
-            </div>
-            `
-        } if (team[i].role === "engineer") {
-            return `
-            <div class="card">
-              <h5 class="card-header">${team[i].name}</h5>
-              <div class="card-body">
-                <h5>${team[i].role}</h5>
-                <h6>${team[i].id}</h6>
-                <h6>${team[i].email}</h6>
-                <h6>${team[i].github}</h6>
-              </div>
-            </div>
-            `
-        } if (team[i].role === "intern") {
-            return `
-            <div class="card">
-              <h5 class="card-header">${team[i].name}</h5>
-              <div class="card-body">
-                <h5>${team[i].role}</h5>
-                <h6>${team[i].id}</h6>
-                <h6>${team[i].email}</h6>
-                <h6>${team[i].school}</h6>
-              </div>
-            </div>
-          `
-        }
+  let finalCards = '';
+  for (i = 0; i < team.length; i++) {
+    if (team[i].role === "manager") {
+      let managerCard = `
+      <div class="card">
+        <h5 class="card-header">${team[i].name}</h5>
+        <div class="card-body">
+          <h5>${team[i].role}</h5>
+          <h6>${team[i].id}</h6>
+          <h6>${team[i].email}</h6>
+          <h6>${team[i].office}</h6>
+        </div>
+      </div>
+      `
+      finalCards += managerCard;
+    } if (team[i].role === "engineer") {
+      let engineerCard = `
+      <div class="card">
+        <h5 class="card-header">${team[i].name}</h5>
+        <div class="card-body">
+          <h5>${team[i].role}</h5>
+          <h6>${team[i].id}</h6>
+          <h6>${team[i].email}</h6>
+          <h6>${team[i].github}</h6>
+        </div>
+      </div>
+      `
+      finalCards += engineerCard;
+    } if (team[i].role === "intern") {
+      let internCard = `
+      <div class="card">
+        <h5 class="card-header">${team[i].name}</h5>
+        <div class="card-body">
+          <h5>${team[i].role}</h5>
+          <h6>${team[i].id}</h6>
+          <h6>${team[i].email}</h6>
+          <h6>${team[i].school}</h6>
+        </div>
+      </div>
+    `
+      finalCards += internCard;
     }
+  }
+  return finalCards; 
 }
 
+
 function generateHTML(data) {
-    return `
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
