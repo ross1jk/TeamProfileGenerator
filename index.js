@@ -1,42 +1,32 @@
 const inquirer = require("inquirer"); 
 const fs = require("fs"); 
+const generateHTML = require("./generateHTML");
+const { create } = require("domain");
 
 let team = []; 
 
-function manager(){
+function createTeam(){
     inquirer.prompt([
         {
-          type: "input",
-          name: "name",  
-          message: "Provide your name"
-        },
-        {
-            type: "input",
-            name: "id",
-            message: "Provide your employee ID"
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "Provide your email"
-        },
-        {
-            type: "input",
-            name: "office",
-            message: "Provide your office number"
+            type: "list",
+            name: "intro",
+            message: "Welcome To The Team Profile Generator! What is our current role?",
+            choices: [
+                "Manager",
+                "Engineer",
+                "Intern",
+            ]
         }
     ]).then(function (data){
-        const role = 'manager'
-        const name = data.name;
-        const id = data.id; 
-        const email = data.email; 
-        const office = data.office; 
-        let manager = {role, name, id, email, office}; 
-        team.push(manager); 
-        addTeamMember(); 
-    }
-    );
-};
+        if (data.intro === "Manager"){
+            addManager(); 
+        }if (data.intro === "Engineer"){
+            addEngineer();
+        }if (data.intro === "Intern"){
+            addIntern(); 
+        }
+    })
+}
 
 function addTeamMember(){
     inquirer.prompt([
@@ -57,11 +47,15 @@ function addTeamMember(){
                     name: "employeeType",
                     message: "What is the team members role?",
                     choices:[
+                        "Manager",
                         "Engineer",
                         "Intern"
                     ]
                 }
             ]).then(function (data){
+                if (data.employeeType === "Manager"){
+                    addManager(); 
+                }
                 if (data.employeeType === "Engineer"){
                     addEngineer();
                 } if (data.employeeType === "Intern"){
@@ -70,10 +64,45 @@ function addTeamMember(){
             });
         } if (data.add === "No"){
             console.log(team);
-            generateHTML();
+            // generateHTML();
         }
     }); 
 }; 
+
+function addManager(){
+    inquirer.prompt([
+        {
+          type: "input",
+          name: "name",  
+          message: "Provide their name"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "Provide their employee ID"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Provide your email"
+        },
+        {
+            type: "input",
+            name: "office",
+            message: "Provide their office number"
+        }
+    ]).then(function (data){
+        const role = 'manager'
+        const name = data.name;
+        const id = data.id; 
+        const email = data.email; 
+        const office = data.office; 
+        let manager = {role, name, id, email, office}; 
+        team.push(manager); 
+        addTeamMember(); 
+    }
+    );
+};
 
 function addEngineer(){
     inquirer.prompt([
@@ -145,40 +174,16 @@ function addIntern(){
     );
 }; 
 
-manager(); 
-
-function generateCard(){
-    for (i = 0; i < team.length; i++){
-        let type = team[i].office || team[i].github || team[i].school; 
-let card = `
-<div class="card">
-  <h5 class="card-header">${team[i].name}</h5>
-  <div class="card-body">
-    <h5>${team[i].role}</h5>
-    <h6>${team[i].id}</h6>
-    <h6>${team[i].email}</h6>
-    <h6>${type}</h6>
-  </div>
-</div>
-` 
-  }
-}
-
-function generateHTML(){
-    return `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <title>Team Profile</title>
-</head>
-<body> 
-    
-</body>
-</html>`
-}
-
+createTeam();
 // function writeToFile(data) {
 //     fs.writeFile("teamprofile.html", generateHTML(data) , (err) =>
 //     err ? console.log(err) : console.log('Your Team Profile Application has been generated successfully!'))
 // }
+
+// function init(){
+//     manager().then((data) => {
+//         writeToFile(data); 
+//     })
+// }; 
+
+// init(); 

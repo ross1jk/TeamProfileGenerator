@@ -14,16 +14,18 @@
 // ` 
 //   }
 
-// function generateHTML(){
-//     return `
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//       <meta charset="UTF-8">
-//       <title>Team Profile</title>
-// </head>
-// <body> 
+function generateHTML(){
+    return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title>Team Profile</title>
+</head>
+<body> 
     
-// </body>
-// </html>`
-// }
+</body>
+</html>`
+}
+
+module.exports = generateHTML; 
