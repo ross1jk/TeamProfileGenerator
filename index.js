@@ -161,13 +161,11 @@ let card = `
   </div>
 </div>
 ` 
-let finalCards = "" + card;
-return finalCards; 
- }
+  }
 }
 
 function generateHTML(){
-    const html = `
+    return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,9 +173,12 @@ function generateHTML(){
       <title>Team Profile</title>
 </head>
 <body> 
-    ${generateCard()}
+    
 </body>
 </html>`
-
-console.log(html); 
 }
+
+// function writeToFile(data) {
+//     fs.writeFile("teamprofile.html", generateHTML(data) , (err) =>
+//     err ? console.log(err) : console.log('Your Team Profile Application has been generated successfully!'))
+// }
