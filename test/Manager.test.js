@@ -13,7 +13,7 @@ describe("getOfficeNumber", () => {
     const manager = new Manager("jac", 1, "jr@gmail.com", "a123"); 
     const managerSpy = jest.spyOn(manager, "getOfficeNumber"); 
     manager.getOfficeNumber(); 
-    expeect(managerSpy).toBeCalled(); 
+    expect(managerSpy).toBeCalled(); 
     managerSpy.mockImplementation(() => { return "a123"}); 
     expect(managerSpy()).toEqual("a123"); 
     });
