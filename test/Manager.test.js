@@ -25,6 +25,14 @@ describe("getOfficeNumber", () => {
     });
 }); 
 
-describe("getRole")
+describe("getRole", () => {
+    it("should run the function to return 'manager' as the role", () => {
+        const manager = new Manager("Jacqueline", 44, "jr@gmail.com", "a123");
+        const managerSpy = jest.spyOn(manager, "getRole");
+        manager.getRole();
+        expect(managerSpy).toBeCalled();
+        managerSpy.mockImplementation(() => { return "Manager" });
+        expect(managerSpy()).toEqual("Manager");
+    }); 
 
-  // will need to double check get role probs 
+}); 
