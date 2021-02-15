@@ -1,7 +1,6 @@
 const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
-    //anything you want tessted inside this constructor
     describe("Intialization", () => {
         it("should create an object with a name, id, and email if provided valid arguments", () => {
             const employee = new Employee("Jacqueline", 44, "jr@gmail.com");
@@ -9,10 +8,8 @@ describe("Employee", () => {
             expect(employee.id).toEqual(44);
             expect(employee.email).toEqual("jr@gmail.com");
         });
-        // not provided argument
         it("should throw an error if provided no arguments", () => {
             const employee = () => new Employee();
-            // looks for this exact error with this exact words 
             expect(employee).toThrow(Error("No Parameters Given")); 
         });
         it("should throw an error if name is not a string", () => {
