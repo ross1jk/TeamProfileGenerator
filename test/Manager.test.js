@@ -4,7 +4,7 @@ const Manager = require("../lib/Manager.js");
 describe("Manager", () => {
     // test to ensure they are set from the super like in employee
     describe("Intialization", () => {
-        it("should create an object with a name, id, and email if provided valid arguments", () => {
+        it("should create an object with a name, id, email, and office number if provided valid arguments", () => {
             const manager = new Manager("Jacqueline", 44, "jr@gmail.com", "a123");
             expect(manager.name).toEqual("Jacqueline");
             expect(manager.id).toEqual(44);

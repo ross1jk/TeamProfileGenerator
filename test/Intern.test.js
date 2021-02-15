@@ -3,7 +3,7 @@ const Intern = require("../lib/Intern.js");
 
 describe("Intern", () => {
     describe("Intialization", () => {
-        it("should create an object with a name, id, and email if provided valid arguments", () => {
+        it("should create an object with a name, id, email, and school if provided valid arguments", () => {
             const intern = new Intern("Jacqueline", 44, "jr@gmail.com", "CMU");
             expect(intern.name).toEqual("Jacqueline");
             expect(intern.id).toEqual(44);
