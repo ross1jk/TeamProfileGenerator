@@ -15,13 +15,19 @@ describe("Employee", () => {
             // looks for this exact error with this exact words 
             expect(employee).toThrow(Error("No Parameters Given")); 
         });
+        it("should throw an error if name is not a string", () => {
+            const employee = () => new Employee(1, 1, "jr@gmail.com");
+            expect(employee).toThrow(Error("Expected parameter of 'name' is not a string"));
+        });
+        it("should throw an error if id is not a number", () => {
+            const employee = () => new Employee("Jacqueline", "one", "jr@gmail.com");
+            expect(employee).toThrow(Error("Expected parameter is not a number")); 
+        }); 
+        it("should throw an error if email is not a string", () => {
+            const employee = () => new Employee("Jacqueline", 1, 22);
+            expect(employee).toThrow(Error("Expected parameter of 'email' is not a string")); 
+        }); 
     });
 });
 
-        // not provided a name string
-        // not provided email string
-        // not provided id 
-        // it("should thrown an error if name is not a string", () => {
-        //     const employee = new Employee(1, 1, "jr@gmail.com");
-        //     expect(employee).toThrowError(new Error("Expected parameter of 'name' is not a string"));
-        // })
+
