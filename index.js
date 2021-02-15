@@ -1,7 +1,10 @@
 const inquirer = require("inquirer"); 
 const fs = require("fs"); 
 const generateHTML = require("./generateHTML");
-const { create } = require("domain");
+const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
 
 let team = []; 
 
@@ -92,7 +95,7 @@ function addManager(){
             message: "Provide their office number"
         }
     ]).then(function (data){
-        const role = 'manager'
+        const role = 'Manager'
         const name = data.name;
         const id = data.id; 
         const email = data.email; 
@@ -127,7 +130,7 @@ function addEngineer(){
             message: "Provide their github username"
         }
     ]).then(function (data){
-        const role = 'engineer'
+        const role = 'Engineer'
         const name = data.name;
         const id = data.id; 
         const email = data.email; 
@@ -162,7 +165,7 @@ function addIntern(){
             message: "Provide the school they attend"
         }
     ]).then(function (data){
-        const role = 'intern'
+        const role = 'Intern'
         const name = data.name;
         const id = data.id; 
         const email = data.email; 
@@ -175,8 +178,6 @@ function addIntern(){
 }; 
 
 createTeam();
-
-
 
 
 function writeToFile(data) {

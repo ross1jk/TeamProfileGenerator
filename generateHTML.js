@@ -1,7 +1,7 @@
 function generateCard(team) {
   let finalCards = '';
   for (i = 0; i < team.length; i++) {
-    if (team[i].role === "manager") {
+    if (team[i].role === "Manager") {
       let managerCard = `
       <div class="card">
         <h5 class="card-header">${team[i].name}</h5>
@@ -14,7 +14,7 @@ function generateCard(team) {
       </div>
       `
       finalCards += managerCard;
-    } if (team[i].role === "engineer") {
+    } if (team[i].role === "Engineer") {
       let engineerCard = `
       <div class="card">
         <h5 class="card-header">${team[i].name}</h5>
@@ -27,7 +27,7 @@ function generateCard(team) {
       </div>
       `
       finalCards += engineerCard;
-    } if (team[i].role === "intern") {
+    } if (team[i].role === "Intern") {
       let internCard = `
       <div class="card">
         <h5 class="card-header">${team[i].name}</h5>
