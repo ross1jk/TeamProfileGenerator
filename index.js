@@ -1,7 +1,6 @@
 const inquirer = require("inquirer"); 
 const fs = require("fs"); 
 const generateHTML = require("./generateHTML");
-const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
@@ -97,10 +96,10 @@ function addManager(){
     ]).then(function (data){
         const role = 'Manager'
         const name = data.name;
-        const id = data.id; 
+        const id = parseInt(data.id); 
         const email = data.email; 
         const office = data.office; 
-        let manager = {role, name, id, email, office}; 
+        let manager = new Manager(role, name, id, email, office); 
         team.push(manager); 
         addTeamMember(); 
     }

@@ -9,7 +9,7 @@ function generateCard(team) {
           <h5>${team[i].role}</h5>
           <h6>Employee ID: ${team[i].id}</h6>
           <h6>Email: ${team[i].email}</h6>
-          <h6>Office Number: ${team[i].office}</h6>
+          <h6>Office Number: ${team[i].officeNumber}</h6>
         </div>
       </div>
       `
