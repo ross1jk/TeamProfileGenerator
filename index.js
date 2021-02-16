@@ -131,10 +131,10 @@ function addEngineer(){
     ]).then(function (data){
         const role = 'Engineer'
         const name = data.name;
-        const id = data.id; 
+        const id = parseInt(data.id); 
         const email = data.email; 
         const github = data.github; 
-        let engineer = {role, name, id, email, github}; 
+        let engineer = new Engineer(role, name, id, email, github); 
         team.push(engineer); 
         addTeamMember(); 
     }
@@ -166,10 +166,10 @@ function addIntern(){
     ]).then(function (data){
         const role = 'Intern'
         const name = data.name;
-        const id = data.id; 
+        const id = parseInt(data.id); 
         const email = data.email; 
         const school = data.school; 
-        let intern = {role, name, id, email, school}; 
+        let intern = new Intern(role, name, id, email, school); 
         team.push(intern); 
         addTeamMember(); 
     }
