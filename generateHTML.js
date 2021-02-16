@@ -7,9 +7,9 @@ function generateCard(team) {
         <h5 class="card-header">${team[i].name}</h5>
         <div class="card-body">
           <h5>${team[i].role}</h5>
-          <h6>${team[i].id}</h6>
-          <h6>${team[i].email}</h6>
-          <h6>${team[i].office}</h6>
+          <h6>Employee ID: ${team[i].id}</h6>
+          <h6>Email: ${team[i].email}</h6>
+          <h6>Office Number: ${team[i].office}</h6>
         </div>
       </div>
       `
@@ -20,9 +20,9 @@ function generateCard(team) {
         <h5 class="card-header">${team[i].name}</h5>
         <div class="card-body">
           <h5>${team[i].role}</h5>
-          <h6>${team[i].id}</h6>
-          <h6>${team[i].email}</h6>
-          <h6>${team[i].github}</h6>
+          <h6>Employee ID: ${team[i].id}</h6>
+          <h6>Email: ${team[i].email}</h6>
+          <h6>GitHub Username: ${team[i].github}</h6>
         </div>
       </div>
       `
@@ -33,9 +33,9 @@ function generateCard(team) {
         <h5 class="card-header">${team[i].name}</h5>
         <div class="card-body">
           <h5>${team[i].role}</h5>
-          <h6>${team[i].id}</h6>
-          <h6>${team[i].email}</h6>
-          <h6>${team[i].school}</h6>
+          <h6>Employee ID: ${team[i].id}</h6>
+          <h6>Email: ${team[i].email}</h6>
+          <h6>School: ${team[i].school}</h6>
         </div>
       </div>
     `
@@ -54,9 +54,19 @@ function generateHTML(data) {
       <meta charset="UTF-8">
       <title>Team Profile</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <link rel="stylesheet" href="./dist/style.css">
 </head>
-<body> 
+<body>
+<div class="jumbotron jumbotron-fluid">
+<div class="container">
+  <h1 class="heading">Team Profile</h1>
+</div>
+</div>
+<div class="container">
+<div class="row">
     ${generateCard(data)}
+</div>
+</div>
 </body>
 </html>`;
 }
