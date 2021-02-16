@@ -5,7 +5,8 @@ describe("Manager", () => {
     // test to ensure they are set from the super like in employee
     describe("Intialization", () => {
         it("should create an object with a name, id, email, and office number if provided valid arguments", () => {
-            const manager = new Manager("Jacqueline", 44, "jr@gmail.com", "a123");
+            const manager = new Manager("Manager", "Jacqueline", 44, "jr@gmail.com", "a123");
+            expect(manager.role).toEqual("Manager"); 
             expect(manager.name).toEqual("Jacqueline");
             expect(manager.id).toEqual(44);
             expect(manager.email).toEqual("jr@gmail.com");
@@ -16,7 +17,7 @@ describe("Manager", () => {
 // will have to remove some stuff watch the video 
 describe("getOfficeNumber", () => {
     it("should run the function to get the office number", () => {
-        const manager = new Manager("Jacqueline", 44, "jr@gmail.com", "a123");
+        const manager = new Manager("Manager", "Jacqueline", 44, "jr@gmail.com", "a123");
         const managerSpy = jest.spyOn(manager, "getOfficeNumber");
         manager.getOfficeNumber();
         expect(managerSpy).toBeCalled();
@@ -27,12 +28,11 @@ describe("getOfficeNumber", () => {
 
 describe("getRole", () => {
     it("should run the function to return 'manager' as the role", () => {
-        const manager = new Manager("Jacqueline", 44, "jr@gmail.com", "a123");
+        const manager = new Manager("Manager", "Jacqueline", 44, "jr@gmail.com", "a123");
         const managerSpy = jest.spyOn(manager, "getRole");
         manager.getRole();
         expect(managerSpy).toBeCalled();
         managerSpy.mockImplementation(() => { return "Manager" });
         expect(managerSpy()).toEqual("Manager");
     }); 
-
 }); 

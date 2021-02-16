@@ -4,7 +4,8 @@ const Engineer = require("../lib/Engineer");
 describe("Engineer", () => {
     describe("Intialization", () => {
         it("should create an object with a name, id, email, and github username if provided valid arguments", () => {
-            const engineer = new Engineer("Jacqueline", 44, "jr@gmail.com", "ross1jk");
+            const engineer = new Engineer("Engineer", "Jacqueline", 44, "jr@gmail.com", "ross1jk");
+            expect(engineer.role).toEqual("Engineer"); 
             expect(engineer.name).toEqual("Jacqueline");
             expect(engineer.id).toEqual(44);
             expect(engineer.email).toEqual("jr@gmail.com");
@@ -15,7 +16,7 @@ describe("Engineer", () => {
 
 describe("getGithub", () => {
     it("should run the function to get the engineer's github", () => {
-        const engineer = new Engineer("Jacqueline", 44, "jr@gmail.com", "ross1jk");
+        const engineer = new Engineer("Engineer", "Jacqueline", 44, "jr@gmail.com", "ross1jk");
         const engineerSpy = jest.spyOn(engineer, "getGithub");
         engineer.getGithub();
         expect(engineerSpy).toBeCalled();
@@ -26,7 +27,7 @@ describe("getGithub", () => {
 
 describe("getRole", () => {
     it("should run the function to return 'Engineer' as the role", () => {
-        const engineer = new Engineer("Jacqueline", 44, "jr@gmail.com", "ross1jk");
+        const engineer = new Engineer("Engineer", "Jacqueline", 44, "jr@gmail.com", "ross1jk");
         const engineerSpy = jest.spyOn(engineer, "getRole");
         engineer.getRole();
         expect(engineerSpy).toBeCalled();
