@@ -12,7 +12,7 @@ This application displays employee’s information organized by person. You will
 
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Mockup](#Mockup)
+* [Mockup](#Mock-Up)
 * [License](#License)
 * [Tests](#Tests)
 * [Questions](#Questions)
@@ -20,24 +20,38 @@ This application displays employee’s information organized by person. You will
 ## Installation
 
 First, ensure that that you have [node.js](https://nodejs.org/en/) installed.
-Once this is application is cloned down to your Visual Studio, you will first need to run the following commands to initialise your repository and install inquirer:
+Once this is application is cloned down to your Visual Studio, you will first need to run the following commands to initialize your repository and install inquirer:
 
 * npm init -y
 * npm i inquirer --save
 
 ## Usage
 
-Watch the following video for step by step instructions on how to use this application: 
+Watch the following video for step by step instructions on how to use this application:
 
 Once Installed, you will run the command node index.js in your terminal. From there you will be asked a series of prompts. Be as detailed as possible when answering. When completed, your Terminal will say ‘your README has generated successfully!’. You will then see your README markdown file will be added to your projects current files. Be sure to review your file, remember to save, commit, and push your file to your GitHub repository.
 
 Team Profile Mockup Functionality:
 
-See Samples in the repository folder: src
+![Questions](./images/prompts.png)
+
+See a sample of a generated team profile html document in the src folder exampleteamprofile.html
 
 ## Mock-Up
 
 The following image shows a mock-up of the generated HTML’s appearance:
+
+### Team Profile HTML Document
+
+![Webpage](./images/TeamProfileMockup.png)
+
+### Generated Email
+
+![emailgenerate](./images/emailgenerate.png)
+
+### Github deployed in seperate tab
+
+![github](./images/github.png)
 
 ## License
 
@@ -52,7 +66,7 @@ This application utilizes [Jest](https://www.npmjs.com/package/jest) for running
 * Intern.test.js
 * Manager.test.js
 
-picture of passign tests here;
+![testcases](./images/testcases.png)
 
 ## Questions
 

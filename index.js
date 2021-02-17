@@ -191,7 +191,6 @@ function addIntern(){
 
 createTeam();
 
-
 function writeToFile(data) {
     fs.writeFile("teamprofile.html", generateHTML(data) , (err) =>
     err ? console.log(err) : console.log('Your Team Profile Application has been generated successfully!'))
