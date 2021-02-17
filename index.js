@@ -12,7 +12,7 @@ function createTeam(){
         {
             type: "list",
             name: "intro",
-            message: "Welcome To The Team Profile Generator! What is our current role?",
+            message: "Welcome To The Team Profile Generator! What is your current role?",
             choices: [
                 "Manager",
                 "Engineer",

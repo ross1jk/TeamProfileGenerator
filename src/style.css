@@ -1,0 +1,23 @@
+.heading{
+    font-size: 75px; 
+    text-align: center;
+    color: white; 
+   
+}
+.container{
+    margin-top: auto;
+}
+.jumbotron{
+    height: 200px; 
+     background-color: #80CEE1; 
+}
+.card{
+    width: 300px; 
+    margin: 10px;  
+}
+.card-header{
+    background-color: #80CEE1; 
+    font-size: 30px; 
+    color: white; 
+}
+
