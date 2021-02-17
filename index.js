@@ -86,7 +86,12 @@ function addManager(){
         {
             type: "input",
             name: "email",
-            message: "Provide your email"
+            message: "Provide their email",
+            validate: function (email)
+            {
+                return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+            }
+
         },
         {
             type: "input",
@@ -121,7 +126,11 @@ function addEngineer(){
         {
             type: "input",
             name: "email",
-            message: "Provide their email"
+            message: "Provide their email", 
+            validate: function (email)
+            {
+                return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+            }
         },
         {
             type: "input",
@@ -156,7 +165,11 @@ function addIntern(){
         {
             type: "input",
             name: "email",
-            message: "Provide their email"
+            message: "Provide their email",
+            validate: function (email)
+            {
+                return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+            }
         },
         {
             type: "input",

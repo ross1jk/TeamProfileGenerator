@@ -8,7 +8,7 @@ function generateCard(team) {
         <div class="card-body">
           <h5>${team[i].role}</h5>
           <h6>Employee ID: ${team[i].id}</h6>
-          <h6>Email: ${team[i].email}</h6>
+          </h6><a href="mailto:${team[i].email}">${team[i].email}</a></h6>
           <h6>Office Number: ${team[i].officeNumber}</h6>
         </div>
       </div>
@@ -21,8 +21,8 @@ function generateCard(team) {
         <div class="card-body">
           <h5>${team[i].role}</h5>
           <h6>Employee ID: ${team[i].id}</h6>
-          <h6>Email: ${team[i].email}</h6>
-          <h6>GitHub Username: ${team[i].github}</h6>
+          </h6><a href="mailto:${team[i].email}">${team[i].email}</a></h6>
+          <h6>GitHub Username: <a href="https://github.com/${team[i].github}" target="_blank"> ${team[i].github}</a></h6>
         </div>
       </div>
       `
@@ -34,8 +34,8 @@ function generateCard(team) {
         <div class="card-body">
           <h5>${team[i].role}</h5>
           <h6>Employee ID: ${team[i].id}</h6>
-          <h6>Email: ${team[i].email}</h6>
-          <h6>School: ${team[i].school}</h6>
+          </h6><a href="mailto:${team[i].email}">${team[i].email}</a></h6>
+          <h6>School:${team[i].school}</h6>
         </div>
       </div>
     `
