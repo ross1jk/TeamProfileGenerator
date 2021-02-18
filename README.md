@@ -27,7 +27,7 @@ Once this is application is cloned down to your Visual Studio, you will first ne
 
 ## Usage
 
-Watch the following video for step by step instructions on how to use this application:
+Watch the following video for step by step instructions on how to use this application: [Video Tutorial](https://drive.google.com/file/d/1DWLgqHyxS8SHytEqKo5Xeuk0PkkludLa/view)
 
 Once Installed, you will run the command node index.js in your terminal. From there you will be asked a series of prompts. Be as detailed as possible when answering. When completed, your Terminal will say ‘your README has generated successfully!’. You will then see your README markdown file will be added to your projects current files. Be sure to review your file, remember to save, commit, and push your file to your GitHub repository.
 
@@ -71,7 +71,6 @@ There are four test suites:
 * Manager.test.js
 
 ![testcases](./images/testcases.png)
-
 
 ## Questions
 

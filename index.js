@@ -65,7 +65,6 @@ function addTeamMember(){
                 }
             });
         } if (data.add === "No"){
-            console.log(team);
             writeToFile(team); 
         }
     }); 
