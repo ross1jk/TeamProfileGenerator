@@ -59,7 +59,11 @@ This application has a MIT License type. Please read more about permissions at [
   
 ## Tests
 
-This application utilizes [Jest](https://www.npmjs.com/package/jest) for running the unit tests. There are four test suites:
+This application utilizes [Jest](https://www.npmjs.com/package/jest) for running the unit tests. 
+
+To run the tests type in your terminal npm test [Testing Tutorial](https://drive.google.com/file/d/1Ak6Lw2fualxF1rzq7v0OlhKn5Cn17vQ8/view)
+
+There are four test suites:
 
 * Employee.test.js
 * Engineer.test.js
@@ -67,6 +71,7 @@ This application utilizes [Jest](https://www.npmjs.com/package/jest) for running
 * Manager.test.js
 
 ![testcases](./images/testcases.png)
+
 
 ## Questions
 
